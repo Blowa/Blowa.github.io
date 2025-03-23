@@ -1,0 +1,64 @@
+/* components/ModuleThumbnail.module.css */
+.thumbnailContainer {
+    cursor: pointer;
+    border-radius: 0.5rem;
+    overflow: hidden; /* Ensure image and overlay stay within rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    /* transition: transform 0.1s ease-in-out; [> Smooth hover effect <] */
+    background-color: white; /* Default background */
+}
+
+.thumbnailContainer:hover {
+    transform: scale(1.03); /* Slight scale up on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow on hover */
+    background-color: #f0f0f0; /* Lighter background on hover */
+}
+
+.thumbnailImageContainer {
+    position: relative; /* For overlay positioning */
+}
+
+.thumbnailImage {
+    display: block; /* Prevent extra space below image */
+    width: 100%;
+    height: auto;
+}
+
+.playIconOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; /* Initially hidden */
+    background-color: rgba(0, 0, 0, 0.3); /* Dark overlay */
+    /* transition: opacity 0.1s ease-in-out; */
+}
+
+.thumbnailContainer:hover .playIconOverlay {
+    opacity: 1; /* Show overlay on hover */
+}
+
+.playIcon {
+    width: 40px;
+    height: 40px;
+    fill: white;
+}
+
+.thumbnailTitle {
+    padding: 1rem;
+    text-align: center;
+    font-weight: 500;
+    color: #333;
+}
+
+/* Optional Tagline Styling if you add it */
+/*.thumbnailTagline {
+    padding: 0 1rem 1rem 1rem;
+    text-align: center;
+    color: #777;
+    font-size: 0.9rem;
+}*/

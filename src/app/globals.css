@@ -1,0 +1,136 @@
+/* @import "tailwindcss"; */
+
+/* :root { */
+  /* --background: #ffffff; */
+  /* --foreground: #171717; */
+/* } */
+
+/* @theme inline { */
+  /* --color-background: var(--background); */
+  /* --color-foreground: var(--foreground); */
+  /* --font-sans: var(--font-geist-sans); */
+  /* --font-mono: var(--font-geist-mono); */
+/* } */
+
+/* @media (prefers-color-scheme: dark) { */
+  /* :root { */
+    /* --background: #0a0a0a; */
+    /* --foreground: #ededed; */
+  /* } */
+/* } */
+
+/* body { */
+  /* background: var(--background); */
+  /* color: var(--foreground); */
+  /* font-family: Arial, Helvetica, sans-serif; */
+/* } */
+
+@import "tailwindcss";
+
+/* :root { */
+  /* [> Updated Background and Foreground Colors <] */
+  /* --background: #f9fafb; [> Off-white background <] */
+  /* --foreground: #374151; [> Dark gray text <] */
+
+  /* [> Accent Colors for Energy <] */
+  /* --primary-accent: #2dd4ff; [> Teal/Cyan - sky-500 <] */
+  /* --secondary-accent: #ffd700; [> Vibrant Yellow/Amber - amber-500 <] */
+/* } */
+
+:root {
+  --background: #f9fafb; /* Off-white background - Keep */
+  --foreground: #333333; /* Slightly darker, richer dark gray for text */
+
+  --primary-accent: #2dd4ff; /* Teal/Cyan - sky-500 - Keep, energetic and modern */
+  --secondary-accent: #f97316; /* Vibrant Orange - orange-500 - More versatile and energetic than yellow */
+  /* Alternatively, consider --secondary-accent: #a855f7; /* Vibrant Purple - purple-500 - For a different energetic vibe */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #f9fafb; /* Dark gray */
+    --foreground: #333333; /* Light gray text */
+    --primary-accent: #67e8f9; /* Lighter Teal/Cyan for dark mode */
+    --secondary-accent: #fde047; /* Lighter Yellow/Amber for dark mode */
+  }
+}
+
+/* @media (prefers-color-scheme: dark) { */
+  /* :root { */
+    /* [> Modern & Energetic Dark Mode <] */
+    /* --background: #111827; [> Dark Gray/Near Black - slate-900 - Modern dark base <] */
+    /* --foreground: #e5e7eb; [> Light Gray - gray-200 - Good contrast <] */
+
+    /* --primary-accent: #67e8f9; [> Lighter Teal/Cyan - cyan-300/400 - Keep, bright and energetic <] */
+    /* --secondary-accent: #fca5a5; [> Light Red/Pink - rose-300/400 - Unexpected and energetic contrast <] */
+    /* [> Alternatively for secondary: --secondary-accent: #a78bfa; /* Light Purple - indigo-300/400 - Another energetic option <] */
+  /* } */
+/* } */
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  /* font-family: Arial, Helvetica, sans-serif;  - Basic */
+  font-family: 'Inter', sans-serif; /* Modern, clean, and widely used */
+  /* Alternatively: font-family: 'Poppins', sans-serif; /* Another modern and stylish option */
+  /* Or: font-family: 'Manrope', sans-serif;   /* Clean, geometric, and modern */
+  /* Or: font-family: 'Outfit', sans-serif;    /* Modern, slightly bolder, good for headings and body */
+  -webkit-font-smoothing: antialiased; /* Improve font rendering on macOS/iOS */
+  -moz-osx-font-smoothing: grayscale;   /* Improve font rendering on Firefox macOS */
+    /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23303030' fill-opacity='0.04' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E"); */
+    
+}
+
+/* @layer utilities { */
+    /* .transition-max-height { */
+        /* transition-property: max-height; */
+    /* } */
+/* } */
+
+@layer utilities {
+    .transition-max-height {
+        transition-property: max-height;
+        transition-duration: 300ms; /* Add duration for smoother transition */
+        transition-timing-function: ease-in-out; /* Add timing function for smoother transition */
+        overflow: hidden; /* Ensure content is clipped during transition */
+    }
+
+.transition-opacity {
+        transition-property: opacity;
+        transition-duration: 200ms;
+        transition-timing-function: ease-in-out;
+    }
+
+    .hover-scale-up {
+        transition-property: transform;
+        transition-duration: 200ms;
+        transition-timing-function: ease-out;
+        transform: scale(1); /* Initial scale */
+    }
+
+    .hover-scale-up:hover {
+        transform: scale(1.05); /* Scale up on hover */
+    }
+
+    .active-scale-down:active { /* For button clicks, etc. */
+        transform: scale(0.95); /* Scale down on click */
+        transition-duration: 100ms; /* Faster for active states */
+        transition-timing-function: ease-in-out;
+    }
+
+    .animate-float {
+        animation: float 20s infinite alternate ease-in-out; /* Adjust duration and timing */
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-60px) translateX(60px) rotate(5deg); /* Adjust movement range and rotation */
+    }
+    100% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+    }
+}
