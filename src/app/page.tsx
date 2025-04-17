@@ -1,81 +1,51 @@
-'use client';
+// pages/modules.tsx (or pages/projects.tsx)
+import React from 'react';
+import ProjectCard from '@/app/components/ProjectCard'; // We'll create this component next
+import Footer from '@/app/components/Footer';
 
-import React, { useState } from 'react';
-import Navigation from './components/Navigation';
-import Footer from './components/Footer';
-import ModuleList from './components/ModuleList';
-import HeroSection from './components/HeroSection';
-import { GameModule } from '@/app/types/module';
-
-const gameModules: GameModule[] = [
-    {
-        name: 'Maze procedural generation',
-        htmlPath: '/modules/maze.html',
-        thumbnailSrc: '/thumbnails/600x400.webp',
-        description: 'Maze procedural generation. Use the player to navigate through the maze'
-    },
-    {
-        name: 'Npc state machine',
-        htmlPath: '/modules/npc.html',
-        thumbnailSrc: '/thumbnails/600x400.webp',
-        description: 'Npc state machine example. Use the player to affect the npc state and see it in action.'
-    },
-    // {
-        // name: 'Procedural City Gen',
-        // htmlPath: '/modules/procedural_city.html',
-        // thumbnailSrc: '/thumbnails/600x400.webp',
-        // description: 'Witness procedural city generation. Adjust parameters and create unique urban landscapes in real-time.'
-    // },
-    // {
-        // name: 'Placeholder',
-        // htmlPath: '/modules/procedural_city.html',
-        // thumbnailSrc: '/thumbnails/600x400.webp',
-        // description: 'Placeholder description for the module'
-    // },
-    // {
-        // name: 'Placeholder',
-        // htmlPath: '/modules/procedural_city.html',
-        // thumbnailSrc: '/thumbnails/600x400.webp',
-        // description: 'Placeholder description for the module'
-    // },
-    // {
-        // name: 'Placeholder',
-        // htmlPath: '/modules/procedural_city.html',
-        // thumbnailSrc: '/thumbnails/600x400.webp',
-        // description: 'Placeholder description for the module'
-    // },
-];
-
-export default function HomePage() {
-    const [currentModuleIndex, setCurrentModuleIndex] = useState<number | null>(null);
-    const [isCanvasExpanded, setIsCanvasExpanded] = useState(false);
-    const currentModule = currentModuleIndex !== null ? gameModules[currentModuleIndex] : null;
-
-    const handleLaunchModule = (index: number) => {
-        setCurrentModuleIndex(index);
-        setIsCanvasExpanded(true);
-    };
-
-    const handleCloseCanvas = () => {
-        setIsCanvasExpanded(false);
-        setCurrentModuleIndex(null);
-    };
+const ProjectsPage: React.FC = () => {
+    const projects = [
+        {
+            name: "Moneygun Run!",
+            description: "A mobile game that achieved over 5 million downloads. Developed gameplay mechanics, UI/UX, and optimized performance for wide device compatibility.",
+            youtubeVideoId: "Sjc-CcCoVO0", // Replace with actual YouTube Video ID
+            googlePlayLink: "https://play.google.com/store/apps/details?id=com.JuicyFrog.MoneygunRun&hl=en",   // Replace with actual Google Play Link
+            appleAppStoreLink: "https://apps.apple.com/us/app/moneygun-run/id1611032629", // Replace with actual Apple App Store Link
+        },
+        {
+            name: "Award-Winning Game Jam: TT",
+            description: "TT has been developed within 48 hours for a game jam, which won first place. Focused on innovative gameplay and rapid prototyping.",
+            youtubeVideoId: "6YTVCKQ0e6E", // Replace with actual YouTube Video ID
+            itchIoLink: "https://itch.io/jam/pot-au-jeu-2/rate/425808",           // Replace with actual Itch.io Link
+            isGameJamWinner: true,
+        },
+        {
+            name: "Word Royal",
+            description: "A puzzle adventure game designed for mobile platforms. Implemented challenging puzzles, intuitive touch controls, and engaging storyline.",
+            youtubeVideoId: "D_It8Y1UQt8", // Replace with actual YouTube Video ID
+            googlePlayLink: "https://play.google.com/store/apps/details?id=com.JuicyFrog.WordRoyal",   // Replace with actual Google Play Link
+        },
+        {
+            name: "Dangerous Blaster",
+            description: "A twin-stick shooter title released on Steam. Focused on combat mechanics, level design, and integrating Steam features.",
+            youtubeVideoId: "ULmHNyyyFFQ", // Replace with actual YouTube Video ID
+            steamLink: "https://store.steampowered.com/app/1177460/Dangerous_Blaster",             // Replace with actual Steam Link
+        },
+    ];
 
     return (
-        <div>
-            <Navigation activeSection="Modules" />
-            <main className="container mx-auto px-4 py-12">
-                <HeroSection
-                    title="Interactive Gameplay Demos"
-                    description="Click on a demo below to explore interactive examples of my gameplay programming skills. These modules showcase pathfinding, procedural generation, and more,"
-                    isCanvasExpanded={isCanvasExpanded}
-                    currentModule={currentModule}
-                    onCloseCanvas={handleCloseCanvas}
-                />
-
-                <ModuleList modules={gameModules} onLaunch={handleLaunchModule} />
-            </main>
+        <div className="bg-background text-foreground py-12"> {/* Light background for the page */}
+            <div className="container mx-auto px-6">
+                <h1 className="text-3xl font-bold text-gray-900 mb-8 text-center">Projects</h1> {/* Page Title */}
+                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8"> {/* Project Grid */}
+                    {projects.map((project, index) => (
+                        <ProjectCard key={index} project={project} />
+                    ))}
+                </div>
+            </div>
             <Footer />
         </div>
     );
-}
+};
+
+export default ProjectsPage;

@@ -99,7 +99,7 @@ import Image from 'next/image'; // Import the Image component
 import { usePathname } from 'next/navigation';
 
 interface NavigationProps {
-    activeSection?: 'Modules' | 'Projects' | 'About Me';
+    activeSection?: 'Projects' | 'Modules' | 'About Me';
 }
 
 const Navigation: React.FC<NavigationProps> = () => {
@@ -107,9 +107,9 @@ const Navigation: React.FC<NavigationProps> = () => {
 
     const getActiveSection = () => {
         if (pathname === '/') {
-            return 'Modules';
-        } else if (pathname === '/projects') {
             return 'Projects';
+        } else if (pathname === '/modules') {
+            return 'Modules';
         } else if (pathname === '/about') {
             return 'About Me';
         }
@@ -121,7 +121,7 @@ const Navigation: React.FC<NavigationProps> = () => {
     return (
         <nav className="fixed top-0 w-full z-10 bg-white backdrop-blur-sm shadow-md">
             <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-                <Link href="/" className="flex items-center space-x-8"> {/* Flex container for image and text */}
+                <Link href="/about" className="flex items-center space-x-8"> {/* Flex container for image and text */}
                     <div className="relative w-10 h-10 rounded-full overflow-hidden transform scale-190"> {/* Container for profile image */}
                         <Image
                             src="/img/me.jpg" // Replace with your profile picture path (in public folder or URL)
@@ -138,8 +138,8 @@ const Navigation: React.FC<NavigationProps> = () => {
                     </div>
                 </Link>
                 <div className="hidden sm:flex space-x-8">
-                    <NavLink href="/" label="Modules" isActive={activeSection === 'Modules'} />
-                    <NavLink href="/projects" label="Projects" isActive={activeSection === 'Projects'} />
+                    <NavLink href="/" label="Projects" isActive={activeSection === 'Projects'} />
+                    <NavLink href="/modules" label="Modules" isActive={activeSection === 'Modules'} />
                     <NavLink href="/about" label="About Me" isActive={activeSection === 'About Me'} />
                 </div>
                 {/* Mobile Navigation (Hamburger menu could be added here) */}
