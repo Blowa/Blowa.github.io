@@ -23,12 +23,12 @@ const ExpandedCanvas: React.FC<ExpandedCanvasProps> = ({ module, onClose }) => {
     };
 
     const codeSnippetContent = `
-    // Example C++ code snippet (replace with actual code)
+    // Example C++ code snippet (placeholder for now)
     #include <iostream>
+    #include <fmt/core.h>
 
     int main() {
-        std::cout << "Hello, WASM!" << std::endl;
-        return 0;
+        fmt::print("Some code\n");
     }
     `;
 

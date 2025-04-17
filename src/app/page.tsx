@@ -12,7 +12,7 @@ const gameModules: GameModule[] = [
         name: 'Maze procedural generation',
         htmlPath: '/modules/maze.html',
         thumbnailSrc: '/thumbnails/600x400.webp',
-        description: 'Create your own maze! Draw obstacles and watch it generate a maze in real-time. (Text to change but good idea.)'
+        description: 'Maze procedural generation. Use the player to navigate through the maze'
     },
     {
         name: 'Npc state machine',
@@ -20,30 +20,30 @@ const gameModules: GameModule[] = [
         thumbnailSrc: '/thumbnails/600x400.webp',
         description: 'Npc state machine example. Use the player to affect the npc state and see it in action.'
     },
-    {
-        name: 'Procedural City Gen',
-        htmlPath: '/modules/procedural_city.html',
-        thumbnailSrc: '/thumbnails/600x400.webp',
-        description: 'Witness procedural city generation. Adjust parameters and create unique urban landscapes in real-time.'
-    },
-    {
-        name: 'Placeholder',
-        htmlPath: '/modules/procedural_city.html',
-        thumbnailSrc: '/thumbnails/600x400.webp',
-        description: 'Placeholder description for the module'
-    },
-    {
-        name: 'Placeholder',
-        htmlPath: '/modules/procedural_city.html',
-        thumbnailSrc: '/thumbnails/600x400.webp',
-        description: 'Placeholder description for the module'
-    },
-    {
-        name: 'Placeholder',
-        htmlPath: '/modules/procedural_city.html',
-        thumbnailSrc: '/thumbnails/600x400.webp',
-        description: 'Placeholder description for the module'
-    },
+    // {
+        // name: 'Procedural City Gen',
+        // htmlPath: '/modules/procedural_city.html',
+        // thumbnailSrc: '/thumbnails/600x400.webp',
+        // description: 'Witness procedural city generation. Adjust parameters and create unique urban landscapes in real-time.'
+    // },
+    // {
+        // name: 'Placeholder',
+        // htmlPath: '/modules/procedural_city.html',
+        // thumbnailSrc: '/thumbnails/600x400.webp',
+        // description: 'Placeholder description for the module'
+    // },
+    // {
+        // name: 'Placeholder',
+        // htmlPath: '/modules/procedural_city.html',
+        // thumbnailSrc: '/thumbnails/600x400.webp',
+        // description: 'Placeholder description for the module'
+    // },
+    // {
+        // name: 'Placeholder',
+        // htmlPath: '/modules/procedural_city.html',
+        // thumbnailSrc: '/thumbnails/600x400.webp',
+        // description: 'Placeholder description for the module'
+    // },
 ];
 
 export default function HomePage() {
